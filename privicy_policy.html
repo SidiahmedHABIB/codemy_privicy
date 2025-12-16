@@ -1,367 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codemy - Your Driving License Exam Companion</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 40px;
-            text-align: center;
-        }
-
-        .header h1 {
-            font-size: 3em;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .header p {
-            font-size: 1.3em;
-            opacity: 0.95;
-        }
-
-        .content {
-            padding: 40px;
-        }
-
-        .section {
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            color: #667eea;
-            font-size: 2em;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
-        }
-
-        h3 {
-            color: #764ba2;
-            font-size: 1.5em;
-            margin: 25px 0 15px;
-        }
-
-        p {
-            margin-bottom: 15px;
-            font-size: 1.05em;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .feature-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        }
-
-        .feature-icon {
-            font-size: 3em;
-            margin-bottom: 15px;
-        }
-
-        .feature-title {
-            font-weight: 600;
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        .feature-desc {
-            color: #555;
-            font-size: 0.95em;
-        }
-
-        .steps {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        .steps ol {
-            margin-left: 25px;
-        }
-
-        .steps li {
-            margin-bottom: 12px;
-            font-size: 1.05em;
-        }
-
-        .privacy-notes {
-            background: #fff3cd;
-            border-left: 5px solid #ffc107;
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-
-        .privacy-notes ul {
-            margin-left: 25px;
-            margin-top: 10px;
-        }
-
-        .privacy-notes li {
-            margin-bottom: 8px;
-        }
-
-        .contact-info {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        .contact-info a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-            transition: border-color 0.3s;
-        }
-
-        .contact-info a:hover {
-            border-bottom-color: white;
-        }
-
-        .rights-list {
-            background: #e3f2fd;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        .rights-list ul {
-            margin-left: 25px;
-        }
-
-        .rights-list li {
-            margin-bottom: 10px;
-            color: #1976d2;
-            font-weight: 500;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1em;
-            margin-top: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-        }
-
-        .footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 40px;
-        }
-
-        .footer p {
-            margin: 5px 0;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2em;
-            }
-
-            .header p {
-                font-size: 1.1em;
-            }
-
-            .content {
-                padding: 20px;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codemy – Privacy Policy & Terms</title>
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      padding: 1.5em;
+      line-height: 1.7;
+      color: #333;
+      background-color: #ffffff;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #444;
+    }
+    hr {
+      margin: 2em 0;
+    }
+    a {
+      color: #3366cc;
+      text-decoration: none;
+    }
+    ul {
+      margin-left: 1.5em;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🚗 Codemy</h1>
-            <p>Your ultimate companion to pass your driving license exam with confidence!</p>
-        </div>
 
-        <div class="content">
-            <div class="section">
-                <h2>Overview</h2>
-                <p>Codemy is a mobile application designed to help learners prepare for their driving license exam. Whether you're a beginner or refreshing your knowledge, Codemy offers interactive lessons, quizzes, and real exam simulations that help you learn smarter and faster.</p>
-            </div>
+<h1>Codemy – Privacy Policy</h1>
 
-            <div class="section">
-                <h2>Features</h2>
-                <div class="features">
-                    <div class="feature-card">
-                        <div class="feature-icon">📚</div>
-                        <div class="feature-title">Interactive Lessons</div>
-                        <div class="feature-desc">Comprehensive learning materials covering all aspects of driving theory</div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">✅</div>
-                        <div class="feature-title">Practice Quizzes</div>
-                        <div class="feature-desc">Test your knowledge with engaging quiz formats</div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🎯</div>
-                        <div class="feature-title">Real Exam Simulations</div>
-                        <div class="feature-desc">Experience realistic exam conditions to boost your confidence</div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📊</div>
-                        <div class="feature-title">Progress Tracking</div>
-                        <div class="feature-desc">Monitor your learning journey and identify areas for improvement</div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔄</div>
-                        <div class="feature-title">Social Login</div>
-                        <div class="feature-desc">Quick and easy registration using your social media accounts</div>
-                    </div>
-                </div>
-            </div>
+<p>
+Codemy is a mobile application designed to help users prepare for their driving license exam through learning materials, quizzes, and exam simulations.
+This Privacy Policy explains how information is collected, used, and protected when you use the Codemy application.
+</p>
 
-            <div class="section">
-                <h2>Getting Started</h2>
-                <h3>Download</h3>
-                <p>Codemy is available as a mobile application. Download it from your device's app store to get started.</p>
-                
-                <h3>Account Creation</h3>
-                <div class="steps">
-                    <ol>
-                        <li>Download and install the Codemy app</li>
-                        <li>Register using your email address or social media account (Facebook/X)</li>
-                        <li>Complete your profile setup</li>
-                        <li>Start learning immediately!</li>
-                    </ol>
-                </div>
-            </div>
+<h2>Information We Collect</h2>
 
-            <div class="section">
-                <h2>Privacy & Data</h2>
-                <p>We take your privacy seriously. Codemy collects minimal personal information necessary to provide you with the best learning experience:</p>
-                <ul>
-                    <li>Name and email address for account creation</li>
-                    <li>Usage data to improve our services and personalize your learning experience</li>
-                    <li>Device information for app optimization</li>
-                </ul>
+<p>Codemy collects only the minimum data required to provide its services:</p>
 
-                <div class="privacy-notes">
-                    <strong>Important Privacy Notes:</strong>
-                    <ul>
-                        <li>We do not collect sensitive personal information</li>
-                        <li>We do not knowingly collect data from users under 18 years of age</li>
-                        <li>You have the right to access, update, or delete your personal data at any time</li>
-                    </ul>
-                </div>
+<ul>
+  <li>Name and email address (for account creation and authentication)</li>
+  <li>Usage data (such as quiz progress and app interactions)</li>
+  <li>Device information (for performance and stability improvements)</li>
+</ul>
 
-                <p style="margin-top: 20px;">For detailed information about how we handle your data, please review our Privacy Policy.</p>
-            </div>
+<p>
+Authentication and data storage are handled using <strong>Firebase</strong> and our own backend services.
+</p>
 
-            <div class="section">
-                <h2>Contact & Support</h2>
-                <p>Have questions or need assistance?</p>
-                <div class="contact-info">
-                    <p><strong>📧 Email:</strong> <a href="mailto:s.ahmedhbb@gmail.com">s.ahmedhbb@gmail.com</a></p>
-                    <p><strong>🏢 Company:</strong> Sidi Ahmed Habib Company</p>
-                    <p><strong>📍 Address:</strong> Ksar street, Nouakchott, Nouakchott 4011, Mauritania</p>
-                </div>
-            </div>
+<h2>How We Use Your Information</h2>
 
-            <div class="section">
-                <h2>Your Rights</h2>
-                <p>You have the right to:</p>
-                <div class="rights-list">
-                    <ul>
-                        <li>Access your personal information</li>
-                        <li>Update or correct your data</li>
-                        <li>Delete your account and associated data</li>
-                        <li>Withdraw consent for data processing</li>
-                        <li>Request a copy of your data</li>
-                    </ul>
-                </div>
-                <p style="margin-top: 20px;">To exercise any of these rights, please contact us at <a href="mailto:s.ahmedhbb@gmail.com" style="color: #667eea; text-decoration: none; font-weight: 600;">s.ahmedhbb@gmail.com</a> or submit a Data Subject Access Request.</p>
-            </div>
+<ul>
+  <li>To create and manage user accounts</li>
+  <li>To provide learning features and track progress</li>
+  <li>To improve app performance and user experience</li>
+  <li>To ensure security and prevent misuse</li>
+</ul>
 
-            <div class="section">
-                <h2>Updates</h2>
-                <p>We regularly update Codemy to:</p>
-                <ul>
-                    <li>Add new features and content</li>
-                    <li>Improve user experience</li>
-                    <li>Enhance security and privacy protection</li>
-                    <li>Fix bugs and optimize performance</li>
-                </ul>
-                <p>Stay tuned for updates and new features!</p>
-            </div>
+<h2>Data Sharing</h2>
 
-            <div style="text-align: center; margin-top: 40px;">
-                <p style="font-size: 1.3em; font-weight: 600; color: #667eea;">Ready to ace your driving exam?</p>
-                <a href="#" class="cta-button">Download Codemy Today</a>
-            </div>
-        </div>
+<p>
+Codemy does <strong>not sell or rent</strong> your personal data.
+Your information is not shared with third parties except where required to operate the application (Firebase services).
+</p>
 
-        <div class="footer">
-            <p><strong>© 2025 Sidi Ahmed Habib Company. All rights reserved.</strong></p>
-            <p>Last Updated: October 25, 2025</p>
-        </div>
-    </div>
+<h2>Children’s Privacy</h2>
+
+<p>
+Codemy is not intended for children under the age of 18.
+We do not knowingly collect personal information from children.
+</p>
+
+<h2>Your Rights</h2>
+
+<p>You have the right to:</p>
+
+<ul>
+  <li>Access your personal data</li>
+  <li>Correct or update your information</li>
+  <li>Request deletion of your account and data</li>
+  <li>Withdraw consent for data processing</li>
+</ul>
+
+<p>
+To exercise these rights, please contact us using the details below.
+</p>
+
+<hr>
+
+<h1>Terms & Conditions</h1>
+
+<p>
+These Terms and Conditions apply to the Codemy mobile application, developed by
+<strong>Sidi Ahmed Habib</strong>, and provided as a free service.
+</p>
+
+<p>
+By downloading or using Codemy, you agree to these terms.
+If you do not agree, please do not use the application.
+</p>
+
+<h2>Use of the Application</h2>
+
+<ul>
+  <li>You may not copy, modify, or distribute the application</li>
+  <li>You may not attempt to extract or reverse engineer the source code</li>
+  <li>All intellectual property rights belong to the Service Provider</li>
+</ul>
+
+<h2>App Availability & Updates</h2>
+
+<p>
+We strive to keep Codemy accurate and up to date, but we do not guarantee uninterrupted availability.
+Updates may be required to continue using the application.
+</p>
+
+<h2>Internet & Device Responsibility</h2>
+
+<p>
+Some features require an active internet connection.
+Codemy is not responsible for data charges, connectivity issues, or device limitations.
+</p>
+
+<h2>Termination</h2>
+
+<p>
+We reserve the right to discontinue or terminate access to Codemy at any time.
+Upon termination, you must stop using the application and delete it if necessary.
+</p>
+
+<h2>Changes to This Policy</h2>
+
+<p>
+We may update this Privacy Policy and Terms from time to time.
+Any changes will be posted on this page.
+</p>
+
+<p>
+<strong>Effective Date:</strong> 16 December 2025
+</p>
+
+<hr>
+
+<h2>Contact Us</h2>
+
+<p>
+If you have any questions or concerns about this Privacy Policy or Terms & Conditions, please contact:
+</p>
+
+<p>
+<strong>Email:</strong> <a href="mailto:sidiahmedhabib@gmail.com">sidiahmedhabib@gmail.com</a><br>
+<strong>Developer:</strong> Sidi Ahmed Habib<br>
+<strong>Location:</strong> Nouakchott, Mauritania
+</p>
+
+<hr>
+
+<p style="font-size: 0.9em; color: #666;">
+© 2025 Codemy. All rights reserved.
+</p>
+
 </body>
 </html>
